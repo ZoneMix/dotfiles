@@ -16,8 +16,8 @@ set foldmethod=indent
 
 filetype off
 syntax off
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
-let path='~/.dotfiles/vim/bundle'
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+let path='~/dotfiles/vim/bundle'
 call vundle#begin(path)
 
 Plugin 'VundleVim/Vundle.vim'

@@ -86,9 +86,9 @@ else
 	echo -e "\nNot backing up old dotfiles."
 fi
 
-echo "source '$HOME/.dotfiles/zsh/zshrc.sh'" > ~/.zshrc
-echo "so $HOME/.dotfiles/vim/vimrc.vim" > ~/.vimrc
-echo "source-file $HOME/.dotfiles/tmux/tmux.conf" > ~/.tmux.conf
+echo "source '$HOME/dotfiles/zsh/zshrc.sh'" > ~/.zshrc
+echo "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
+echo "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
 echo
 echo "Please restart to complete the deployment process"

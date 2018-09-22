@@ -1,4 +1,4 @@
-export ZSH=~/.dotfiles/zsh
+export ZSH=~/dotfiles/zsh
 plugins=(git)
 # source $ZSH/prompt.sh
 source $ZSH/plugins/auto-ls/auto-ls.sh
