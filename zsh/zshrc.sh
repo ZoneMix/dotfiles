@@ -9,9 +9,22 @@ source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $ZSH/oh-my-zsh.sh
 
-PROMPT='[%F{39}%~%F{reset}$(git_prompt_info)%(?::, %F{red}%?%F{reset})]: '
+function git_files(){
+	if git rev-parse --git-dir > /dev/null 2>&1; then
+		files=$(git status -s | wc -l | awk '{$1=$1};1')
+		if [[ files -ne "0" ]]; then
+			echo "%F{142}+$files%F{reset}"
+		fi
+		echo ''
+	else
+		echo ''
+	fi
+}
 
-ZSH_THEME_GIT_PROMPT_PREFIX=", %F{21}"
+PROMPT='[%F{75}%~%F{reset}$(git_prompt_info)$(git_files)%(?::, %F{209}%?%F{reset})]: '
+
+ZSH_THEME_GIT_PROMPT_PREFIX=", %F{98}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%F{reset}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{reset} %F{226}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%F{reset}"
+ZSH_THEME_GIT_PROMPT_DIRTY=""
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
