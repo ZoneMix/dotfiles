@@ -1,6 +1,6 @@
 export ZSH=~/dotfiles/zsh
+TERM=screen-256color
 plugins=(git)
-# source $ZSH/prompt.sh
 source $ZSH/plugins/auto-ls/auto-ls.sh
 # source $ZSH/plugins/git/git.sh
 source $ZSH/plugins/vi-mode/vi-mode.sh
@@ -28,3 +28,4 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%F{reset}"
 ZSH_THEME_GIT_PROMPT_DIRTY=""
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
+alias dotfiles-help='view ~/dotfiles/help.txt'
