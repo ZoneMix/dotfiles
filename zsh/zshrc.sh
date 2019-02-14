@@ -1,31 +1,18 @@
 export ZSH=~/dotfiles/zsh
 TERM=screen-256color
-plugins=(git)
-source $ZSH/plugins/auto-ls/auto-ls.sh
-# source $ZSH/plugins/git/git.sh
-source $ZSH/plugins/vi-mode/vi-mode.sh
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+ZSH_THEME="avit"
 source $ZSH/oh-my-zsh.sh
 
-function git_files(){
-	if git rev-parse --git-dir > /dev/null 2>&1; then
-		files=$(git status -s | wc -l | awk '{$1=$1};1')
-		if [[ files -ne "0" ]]; then
-			echo "%F{142}+$files%F{reset}"
-		fi
-		echo ''
-	else
-		echo ''
-	fi
+function asmc(){
+	nasm -f macho64 $1
+	ld -macosx_version_min 10.7.0 -lSystem -o ${$1%.*} ${$1%.*}.o
 }
-
-PROMPT='[%F{75}%~%F{reset}$(git_prompt_info)$(git_files)%(?::, %F{209}%?%F{reset})]: '
-
-ZSH_THEME_GIT_PROMPT_PREFIX=", %F{98}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%F{reset}"
-ZSH_THEME_GIT_PROMPT_DIRTY=""
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=244'
-alias dotfiles-help='view ~/dotfiles/help.txt'
+function gpp(){
+	echo "g++ -std=c++11 -o $(echo "$1" | cut -d . -f 1) $1"
+	g++ -std=c++11 -o $(echo "$1" | cut -d . -f 1) $1
+}
+alias love="/Applications/love.app/Contents/MacOS/love"
+fortune | cowsay | lolcat
