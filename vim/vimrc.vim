@@ -17,6 +17,13 @@ set foldenable
 set foldlevelstart=10
 set foldmethod=marker
 nnoremap <space> za
+nnoremap j gj
+nnoremap k gk
+" Uncomment these to turn off arrow keys to practice hjkl movement
+" map <UP> <NOP>
+" map <LEFT> <NOP>
+" map <DOWN> <NOP>
+" map <RIGHT> <NOP>
 filetype plugin indent on
 syntax on
 set background=dark
