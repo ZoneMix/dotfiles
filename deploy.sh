@@ -90,6 +90,9 @@ echo "source '$HOME/dotfiles/zsh/zshrc.sh'" > ~/.zshrc
 echo "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
 echo "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
+mkdir $HOME/.vim/autoload
+curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
 /usr/bin/env python3 ~/dotfiles/vim/bundle/youcompleteme/install.py --clang-completer
 
 echo
