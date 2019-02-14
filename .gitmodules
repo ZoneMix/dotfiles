@@ -37,3 +37,21 @@
 [submodule "vim/bundle/youcompleteme"]
 	path = vim/bundle/youcompleteme
 	url = https://github.com/Valloric/YouCompleteMe
+[submodule "prefix_highlight"]
+	path = prefix_highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight
+[submodule "tmux/plugins/sidebar"]
+	path = tmux/plugins/sidebar
+	url = https://github.com/tmux-plugins/tmux-sidebar
+[submodule "tmux/plugins/tmux-sidebar"]
+	path = tmux/plugins/tmux-sidebar
+	url = https://github.com/tmux-plugins/tmux-sidebar
+[submodule "tmux/plugins/tmux-prefix-highlight"]
+	path = tmux/plugins/tmux-prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight
+[submodule "tmux/plugins/tmux-continuum"]
+	path = tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule "tmux/plugins/tmux-urlview"]
+	path = tmux/plugins/tmux-urlview
+	url = https://github.com/tmux-plugins/tmux-urlview
