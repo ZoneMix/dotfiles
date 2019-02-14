@@ -4,8 +4,32 @@ TERM=xterm-256color
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-ZSH_THEME="avit"
+#ZSH_THEME="avit"
 source $ZSH/oh-my-zsh.sh
+
+local _return_status="%(?.., %{$fg_bold[red]%}⍉)%{$reset_color%}"
+local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%}"
+
+function _get_timer() {
+	}
+
+function preexec() {
+  timer=${timer:-$SECONDS}
+}
+
+function precmd() {
+	if [ $timer ]; then
+		timer_show=$(($SECONDS - $timer))
+		if [ $timer_show -gt 0 ]; then
+			PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}${_return_status}, %F{magenta}${timer_show}s%{$reset_color%}] "
+		else
+			PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}${_return_status}] "
+		fi
+		unset timer
+	fi
+}
+
+#PROMPT='[$(_user_host)${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}] '
 
 function asmc(){
 	nasm -f macho64 $1
