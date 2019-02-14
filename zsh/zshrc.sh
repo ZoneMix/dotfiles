@@ -1,5 +1,6 @@
 export ZSH=~/dotfiles/zsh
-TERM=screen-256color
+#TERM=screen-256color
+TERM=xterm-256color
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 

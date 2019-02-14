@@ -90,5 +90,7 @@ echo "source '$HOME/dotfiles/zsh/zshrc.sh'" > ~/.zshrc
 echo "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
 echo "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
+/usr/bin/env python3 ~/dotfiles/vim/bundle/youcompleteme/install.py --clang-completer
+
 echo
 echo "Please restart to complete the deployment process"
