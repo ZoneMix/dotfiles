@@ -10,13 +10,10 @@ source $ZSH/oh-my-zsh.sh
 local _return_status="%(?.., %{$fg_bold[red]%}⍉)%{$reset_color%}"
 local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%}"
 
-function _get_timer() {
-	}
-
 function preexec() {
   timer=${timer:-$SECONDS}
 }
-
+PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}] "
 function precmd() {
 	if [ $timer ]; then
 		timer_show=$(($SECONDS - $timer))
@@ -39,5 +36,3 @@ function gpp(){
 	echo "g++ -std=c++11 -o $(echo "$1" | cut -d . -f 1) $1"
 	g++ -std=c++11 -o $(echo "$1" | cut -d . -f 1) $1
 }
-alias love="/Applications/love.app/Contents/MacOS/love"
-fortune | cowsay | lolcat
