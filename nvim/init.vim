@@ -84,6 +84,7 @@
 " }}}
 " {{{ quantum
 	let g:quantum_black = 1
+	let g:quantum_italics = 1
 	set background=dark
 	set termguicolors
 	colorscheme quantum
@@ -116,6 +117,7 @@
 " }}}
 " {{{ highlights
 	hi Visual ctermfg=255 guifg=#FFFFFF ctermbg=129 guibg=#AF00FF
+	highlight Comment cterm=italic
 " }}}
 " {{{ functions & commands
 	command Skim :execute "!open -a Skim '" . split(@%,'\.')[0] . ".pdf'"

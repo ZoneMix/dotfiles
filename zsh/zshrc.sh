@@ -1,5 +1,5 @@
 export ZSH=~/dotfiles/zsh
-TERM=xterm-256color
+TERM=xterm-256color-italic
 export EDITOR=nvim
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -74,6 +74,8 @@ search () {
 
 	open "$searchstr"
 }
+
+alias tmux="env TERM=screen-256color-italic tmux -2"
 
 alias ga="git add ."
 alias gc="git commit"
