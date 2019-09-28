@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [[ "$1" == "CSC-461" ]];
+then
+	ln -sfn ~/Documents/School/CSC-461 ~/class
+elif [[ "$1" == "CSC-410" ]];
+then
+	ln -sfn ~/Documents/School/CSC-410 ~/class
+elif [[ "$1" == "CSC-260" ]];
+then
+	ln -sfn ~/Documents/School/CSC-260 ~/class
+elif [[ "$1" == "CSC-234" ]];
+then
+	ln -sfn ~/Documents/School/CSC-234 ~/class
+elif [[ "$1" == "THEA-131" ]];
+then
+	ln -sfn ~/Documents/School/THEA-131 ~/class
+elif [[ "$1" == "Programming-Club" ]];
+then
+	ln -sfn ~/Documents/School/Programming\ Club ~/class
+elif [[ "$1" == "OffSec" ]];
+then
+	ln -sfn ~/Documents/School/OffSec ~/class
+elif [[ "$1" == "DefSec" ]];
+then
+	ln -sfn ~/Documents/School/DefSec ~/class
+else
+	echo "$1 is not a valid class."
+fi
