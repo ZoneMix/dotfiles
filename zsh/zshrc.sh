@@ -1,5 +1,6 @@
 export ZSH=~/dotfiles/zsh
 TERM=xterm-256color
+export EDITOR=nvim
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -80,7 +81,7 @@ alias gp="git push -u origin master"
 
 alias vim="nvim"
 
-alias vimrc="vim ~/dotfiles/vim/vimrc.vim"
+alias vimrc="vim ~/dotfiles/nvim/init.vim"
 alias tmuxrc="vim ~/dotfiles/tmux/tmux.conf"
 alias zshrc="vim ~/dotfiles/zsh/zshrc.sh"
 

@@ -42,7 +42,9 @@
 	set incsearch
 	set hlsearch
 	set foldenable
-	set foldlevelstart=0
+	"This will Fold everything
+	"set foldlevelstart=0
+	set foldlevelstart=20
 	set foldmethod=marker
 " }}}
 " {{{ remaps
