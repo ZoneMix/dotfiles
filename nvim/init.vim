@@ -118,5 +118,5 @@
 	hi Visual ctermfg=255 guifg=#FFFFFF ctermbg=129 guibg=#AF00FF
 " }}}
 " {{{ functions & commands
-	command Skim :! open -a Skim %
+	command Skim :execute "!open -a Skim '" . split(@%,'\.')[0] . ".pdf'"
 " }}}
