@@ -65,7 +65,7 @@ fi
 echo
 check_for_software zsh
 echo
-check_for_software vim
+check_for_software nvim
 echo
 check_for_software tmux
 echo 
@@ -81,19 +81,18 @@ stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
     mv ~/.zshrc ~/.zshrc.old
 	mv ~/.tmux.conf ~/.tmux.conf.old
-	mv ~/.vimrc ~/.vimrc.old
+	mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.old
 else
 	echo -e "\nNot backing up old dotfiles."
 fi
 
 echo "source '$HOME/dotfiles/zsh/zshrc.sh'" > ~/.zshrc
-echo "so $HOME/dotfiles/vim/vimrc.vim" > ~/.vimrc
+echo "source '$HOME/dotfiles/nvim/init.vim'" > ~/.config/nvim/init.vim
 echo "source-file $HOME/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
-mkdir $HOME/.vim/autoload
-curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-/usr/bin/env python3 ~/dotfiles/vim/bundle/youcompleteme/install.py --clang-completer
+nvim +PlugInstall +qall
 
 echo
-echo "Please restart to complete the deployment process"
+echo "Please restart your shell to complete the deployment process"
