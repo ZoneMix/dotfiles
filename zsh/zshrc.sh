@@ -81,6 +81,8 @@ alias gp="git push -u origin master"
 
 alias vim="nvim"
 
+alias skim="open -a Skim"
+
 alias vimrc="vim ~/dotfiles/nvim/init.vim"
 alias tmuxrc="vim ~/dotfiles/tmux/tmux.conf"
 alias zshrc="vim ~/dotfiles/zsh/zshrc.sh"
