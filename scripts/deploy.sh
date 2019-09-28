@@ -94,5 +94,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 nvim +PlugInstall +qall
 
+cd $HOME/dotfiles/scripts/calc && make
+
 echo
 echo "Please restart your shell to complete the deployment process"
