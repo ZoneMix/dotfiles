@@ -1,29 +1,38 @@
 export ZSH=~/dotfiles/zsh
 TERM=xterm-256color-italic
 export EDITOR=nvim
+export PATH=/Users/blake/.nimble/bin:$PATH
+
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source $ZSH/oh-my-zsh.sh
-
-local _return_status="%(?.., %{$fg_bold[red]%}⍉)%{$reset_color%}"
-local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%}"
-
-function preexec() {
-  timer=${timer:-$SECONDS}
+autoload -Uz add-zsh-hook
+_nicy_prompt() {
+	#PROMPT=$(~/.nimble/bin/nicy)
+	PROMPT=$(~/.nimble/pkgs/nicy-2.4.2/nicy2)
 }
-PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}] "
-function precmd() {
-	if [ $timer ]; then
-		timer_show=$(($SECONDS - $timer))
-		if [ $timer_show -gt 0 ]; then
-			PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}${_return_status}, %F{magenta}${timer_show}s%{$reset_color%}] "
-		else
-			PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}${_return_status}] "
-		fi
-		unset timer
-	fi
-}
+add-zsh-hook precmd _nicy_prompt
+
+#source $ZSH/oh-my-zsh.sh
+
+#local _return_status="%(?.., %{$fg_bold[red]%}⍉)%{$reset_color%}"
+#local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%}"
+
+#function preexec() {
+  #timer=${timer:-$SECONDS}
+#}
+#PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}] "
+#function precmd() {
+	#if [ $timer ]; then
+		#timer_show=$(($SECONDS - $timer))
+		#if [ $timer_show -gt 0 ]; then
+			#PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}${_return_status}, %F{magenta}${timer_show}s%{$reset_color%}] "
+		#else
+			#PROMPT="[${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}${_return_status}] "
+		#fi
+		#unset timer
+	#fi
+#}
 
 #PROMPT='[$(_user_host)${_current_dir}%{$fg[$CARETCOLOR]%}%{$resetcolor%}] '
 
@@ -75,7 +84,29 @@ search () {
 	open "$searchstr"
 }
 
-alias tmux="env TERM=screen-256color-italic tmux -2"
+docs () {
+	searchstr="https://duckduckgo.com/?q="
+	first=1
+	for var in "$@"
+	do
+		if [[ $first == 1 && ($var == "cpp" || $var == "py" || $var == "python" || $var == "py3" || $var == "python3" || $var == "rust" || $var == "js") ]]
+		then
+			if [[ $var == "c++" ]]
+			then
+				var="cpp"
+			fi
+			var="!$var"
+		fi
+		first=0
+		searchstr="$searchstr$var+"
+	done
+
+	searchstr=${searchstr%?}
+
+	open "$searchstr"
+}
+
+alias tmux="env TERM=screen-256color-italic tmux"
 
 alias ga="git add ."
 alias gc="git commit"
@@ -90,6 +121,8 @@ alias tmuxrc="vim ~/dotfiles/tmux/tmux.conf"
 alias zshrc="vim ~/dotfiles/zsh/zshrc.sh"
 
 alias ls="exa"
+
+alias server="browser-sync start --server --files '**/*.html' '**/*.css' '**/*.js'"
 
 alias now="date +'%l:%M%p'"
 

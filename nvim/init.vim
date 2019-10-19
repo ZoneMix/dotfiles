@@ -1,3 +1,4 @@
+set nocompatible
 " {{{ Plugins
 	call plug#begin('~/dotfiles/nvim/plugins')
 
@@ -10,7 +11,6 @@
 	Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 	Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
-	Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 	Plug 'edkolev/tmuxline.vim'
 	Plug 'vim-airline/vim-airline'
 	Plug 'tyrannicaltoucan/vim-quantum'
@@ -24,6 +24,10 @@
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'xolox/vim-misc'
 	Plug 'xolox/vim-notes'
+	Plug 'vimwiki/vimwiki'
+	"Plug 'zah/nim.vim'
+	"Plug 'alaviss/nim.nvim'
+	Plug 'baabelfish/nvm-nim'
 
 	call plug#end()
 " }}}
@@ -46,19 +50,79 @@
 	"set foldlevelstart=0
 	set foldlevelstart=20
 	set foldmethod=marker
+	set splitbelow
+	set splitright
 " }}}
 " {{{ remaps
 	nnoremap <leader>f za
 
-	nnoremap <C-j> :tabn<cr>
-	nnoremap <C-k> :tabp<cr>
+	nnoremap <C-t> :NERDTreeToggle<cr>
+	inoremap <C-t> :NERDTreeToggle<cr>
 
-	nnoremap <C-t> :NERDTreeToggle<enter>
-	inoremap <C-t> :NERDTreeToggle<enter>
+	nmap <C-S-Right> :tabn<cr>
+	nmap <C-S-Left> :tabp<cr>
+	nmap <leader>sl :SidewaysLeft<cr>
+	nmap <leader>sr :SidewaysRight<cr>
+	vmap <C-S-Right> :tabn<cr>
+	vmap <C-S-Left> :tabp<cr>
+	vmap <leader>sl :SidewaysLeft<cr>
+	vmap <leader>sr :SidewaysRight<cr>
+	"imap <C-S-Right> :tabn<cr>
+	"imap <C-S-Left> :tabp<cr>
+	"imap <leader>sl :SidewaysLeft<cr>
+	"imap <leader>sr :SidewaysRight<cr>
 
-	nnoremap <C-h> :SidewaysLeft<cr>
-	nnoremap <C-l> :SidewaysRight<cr>
+	nnoremap <C-J> <C-W><C-J>
+	nnoremap <C-K> <C-W><C-K>
+	nnoremap <C-L> <C-W><C-L>
+	nnoremap <C-H> <C-W><C-H>
+	vnoremap <C-J> <C-W><C-J>
+	vnoremap <C-K> <C-W><C-K>
+	vnoremap <C-L> <C-W><C-L>
+	vnoremap <C-H> <C-W><C-H>
 
+	nmap <leader>bn :vnew<cr>
+	nmap <leader>bN :enew<cr>
+	nmap <leader>bh :new<cr>
+	nmap <leader>bq :q<cr>
+	nmap <leader>bk :q<cr>
+	nmap <leader>bz :close<cr>
+	nmap <leader>bb :buffers<cr>:buffer<Space>
+	vmap <leader>bn :vnew<cr>
+	vmap <leader>bN :enew<cr>
+	vmap <leader>bh :new<cr>
+	vmap <leader>bq :q<cr>
+	vmap <leader>bk :q<cr>
+	vmap <leader>bz :close<cr>
+	vmap <leader>bb :buffers<cr>:buffer<Space>
+
+	nmap <leader>wn :tabnew<cr>
+	nmap <leader>wd :tabclose<cr>
+" }}}
+" {{{ functions & commands
+	command Skim :execute "!open -a Skim '" . split(@%,'\.')[0] . ".pdf'"
+	let s:previousMode=''
+	let s:tmuxenv = $TMUX
+	let s:tmux = 0
+	if (s:tmuxenv != "")
+		let s:tmux = 1
+	endif
+	function! ChangeTmuxline()
+		if s:tmux == 1
+			let currentMode=mode()
+			if s:previousMode != currentMode
+				if currentMode == "i" || currentMode == "ic" || currentMode == "ix" || currentMode == "R" || currentMode == "Rx" || currentMode == "Rc" || currentMode == "Rv"
+					:Tmuxline airline_insert
+				elseif currentMode == "n" || currentMode == "niR" || currentMode == "niI" || currentMode == "niV" || currentMode == "no" || currentMode == "nov" || currentMode == "noV" || currentMode == "noCTRL-V" || currentMode == "c" || currentMode == "ce" || currentMode == "cv" || currentMode == "r" || currentMode == "rm" || currentMode == "r?" || currentMode == "!" || currentMode == "t"
+					:Tmuxline airline
+				elseif currentMode == "v" || currentMode == "V" || currentMode == "CTRL-V" || currentMode == "s" || currentMode == "S" || currentMode == "CTRL-S"
+					:Tmuxline airline_visual
+				endif
+				let s:previousMode=currentMode
+			endif	
+		endif
+		return ""
+	endfunction
 " }}}
 " {{{ neomake
 	call neomake#configure#automake('nrwi', 1)
@@ -90,15 +154,28 @@
 	colorscheme quantum
 " }}}
 " {{{ airline
+	if !exists('g:airline_symbols')
+		let g:airline_symbols = {}
+	endif
 	let g:airline_powerline_fonts = 1
 	let g:airline_theme = 'quantum'
-	let g:airline_section_z = ' %p%% %l:%c '
+	let g:airline_section_z = '%{ChangeTmuxline()} %p%% %l:%c '
+
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.linenr = ''
 " }}}
 " {{{ vim-notes
 	let g:notes_directories = ['~/class/Notes']
 	let g:notes_suffix = '.txt'
 " }}}
 " {{{ tmuxline
+	let g:tmuxline_powerline_separators = 1
+	let g:tmuxline_theme = 'airline'
 	let g:tmuxline_preset = {
 		\'a': '#S',
 		\'b': '#h',
@@ -114,11 +191,10 @@
 	autocmd BufRead,BufNewFile *.txt highlight notesRealURL ctermfg=39 guifg=#00afff gui=underline cterm=underline
 	autocmd BufRead,BufNewFile *.txt highlight notesEmailAddr ctermfg=39 guifg=#00afff gui=underline cterm=underline
 	autocmd BufRead,BufNewFile *.txt highlight notesAtxHeading ctermfg=28 guifg=#008700 gui=bold cterm=bold
+
+	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " }}}
 " {{{ highlights
 	hi Visual ctermfg=255 guifg=#FFFFFF ctermbg=129 guibg=#AF00FF
 	highlight Comment cterm=italic
-" }}}
-" {{{ functions & commands
-	command Skim :execute "!open -a Skim '" . split(@%,'\.')[0] . ".pdf'"
 " }}}
