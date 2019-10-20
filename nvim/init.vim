@@ -27,7 +27,9 @@ set nocompatible
 	Plug 'vimwiki/vimwiki'
 	"Plug 'zah/nim.vim'
 	"Plug 'alaviss/nim.nvim'
-	Plug 'baabelfish/nvm-nim'
+	Plug 'baabelfish/nvim-nim'
+	Plug 'mrk21/yaml-vim'
+	Plug 'voldikss/vim-floaterm'
 
 	call plug#end()
 " }}}
@@ -98,6 +100,10 @@ set nocompatible
 
 	nmap <leader>wn :tabnew<cr>
 	nmap <leader>wd :tabclose<cr>
+
+	noremap <silent> <F12> :FloatermToggle<CR>i
+	noremap! <silent> <F12> <Esc>:FloatermToggle<CR>i
+	tnoremap <silent> <F12> <C-\><C-n>:FloatermToggle<CR>
 " }}}
 " {{{ functions & commands
 	command Skim :execute "!open -a Skim '" . split(@%,'\.')[0] . ".pdf'"
@@ -186,6 +192,9 @@ set nocompatible
 		\'y': '#(sh ~/dotfiles/scripts/batt.sh)',
 		\'z': '#(date +"%l:%M%p")'}
 " }}}
+" {{{ floaterm
+	let g:floaterm_position = 'center'
+" }}}
 " {{{ autocmd
 	autocmd BufRead,BufNewFile *.txt highlight notesTextURL ctermfg=39 guifg=#00afff gui=underline cterm=underline
 	autocmd BufRead,BufNewFile *.txt highlight notesRealURL ctermfg=39 guifg=#00afff gui=underline cterm=underline
@@ -193,6 +202,9 @@ set nocompatible
 	autocmd BufRead,BufNewFile *.txt highlight notesAtxHeading ctermfg=28 guifg=#008700 gui=bold cterm=bold
 
 	autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+	au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+	autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " }}}
 " {{{ highlights
 	hi Visual ctermfg=255 guifg=#FFFFFF ctermbg=129 guibg=#AF00FF
