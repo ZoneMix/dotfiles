@@ -106,6 +106,10 @@ docs () {
 	open "$searchstr"
 }
 
+rand () {
+	python3 ~/dotfiles/scripts/rand.py $@
+}
+
 alias tmux="env TERM=screen-256color-italic tmux"
 
 alias ga="git add ."
