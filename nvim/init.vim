@@ -30,6 +30,8 @@ set nocompatible
 	Plug 'baabelfish/nvim-nim'
 	Plug 'mrk21/yaml-vim'
 	Plug 'voldikss/vim-floaterm'
+	Plug 'thaerkh/vim-indentguides'
+	Plug 'jceb/vim-orgmode'
 
 	call plug#end()
 " }}}
@@ -88,6 +90,10 @@ set nocompatible
 	nmap <leader>bh :new<cr>
 	nmap <leader>bq :q<cr>
 	nmap <leader>bk :q<cr>
+	nmap <leader>bd :q<cr>
+	nmap <leader>bQ :q!<cr>
+	nmap <leader>bK :q!<cr>
+	nmap <leader>bD :q!<cr>
 	nmap <leader>bz :close<cr>
 	nmap <leader>bb :buffers<cr>:buffer<Space>
 	vmap <leader>bn :vnew<cr>
@@ -95,11 +101,17 @@ set nocompatible
 	vmap <leader>bh :new<cr>
 	vmap <leader>bq :q<cr>
 	vmap <leader>bk :q<cr>
+	vmap <leader>bd :q<cr>
+	vmap <leader>bQ :q!<cr>
+	vmap <leader>bK :q!<cr>
+	vmap <leader>bD :q!<cr>
 	vmap <leader>bz :close<cr>
 	vmap <leader>bb :buffers<cr>:buffer<Space>
 
 	nmap <leader>wn :tabnew<cr>
 	nmap <leader>wd :tabclose<cr>
+
+	nmap <leader>igt :IndentGuidesToggle<cr>
 
 	noremap <silent> <F12> :FloatermToggle<CR>i
 	noremap! <silent> <F12> <Esc>:FloatermToggle<CR>i
@@ -192,8 +204,11 @@ set nocompatible
 		\'y': '#(sh ~/dotfiles/scripts/batt.sh)',
 		\'z': '#(date +"%l:%M%p")'}
 " }}}
-" {{{ floaterm
+" {{{ floaterm 
 	let g:floaterm_position = 'center'
+" }}}
+" {{{ vim-indentguides 
+
 " }}}
 " {{{ autocmd
 	autocmd BufRead,BufNewFile *.txt highlight notesTextURL ctermfg=39 guifg=#00afff gui=underline cterm=underline
