@@ -110,9 +110,9 @@ rand () {
 	python3 ~/dotfiles/scripts/rand.py $@
 }
 
-alias projector='python3 ~/dotfiles/scripts/projector.py'
-alias proj='python3 ~/dotfiles/scripts/projector.py'
-alias p='python3 ~/dotfiles/scripts/projector.py'
+alias projector='python3 ~/dotfiles/scripts/projector/projector.py'
+alias proj='python3 ~/dotfiles/scripts/projector/projector.py'
+alias p='python3 ~/dotfiles/scripts/projector/projector.py'
 
 alias tmux="env TERM=screen-256color-italic tmux"
 
