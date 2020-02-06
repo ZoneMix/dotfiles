@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<inf-acl>
+  <sheet account="default" can-add-subdirectory="yes" can-add-document="yes" can-sync-in="yes" can-remove-node="yes" can-explore-node="yes" can-subscribe-chat="yes" can-subscribe-session="yes" can-join-user="yes" can-query-account-list="no" can-create-account="no" can-override-account="no" can-remove-account="no" can-query-acl="no" can-set-acl="no"/>
+</inf-acl>

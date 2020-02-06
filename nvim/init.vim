@@ -5,11 +5,6 @@ set nocompatible
 	Plug 'neomake/neomake'
 	Plug 'Shougo/deoplete.nvim'
 	Plug 'Shougo/deoplete-clangx'
-	Plug 'deoplete-plugins/deoplete-jedi'
-	Plug 'sebastianmarkow/deoplete-rust'
-	Plug 'HerringtonDarkholme/yats.vim'
-	Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-	Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	Plug 'edkolev/tmuxline.vim'
 	Plug 'vim-airline/vim-airline'
@@ -25,9 +20,6 @@ set nocompatible
 	Plug 'xolox/vim-misc'
 	Plug 'xolox/vim-notes'
 	Plug 'vimwiki/vimwiki'
-	"Plug 'zah/nim.vim'
-	"Plug 'alaviss/nim.nvim'
-	Plug 'baabelfish/nvim-nim'
 	Plug 'mrk21/yaml-vim'
 	Plug 'voldikss/vim-floaterm'
 	Plug 'thaerkh/vim-indentguides'
@@ -157,9 +149,6 @@ set nocompatible
 	let g:deoplete#enable_at_startup = 1
 	" call deoplete#custom#var('clangx', 'default_c_options', '')
 	" call deoplete#custom#var('clangx', 'default_cpp_options', '')
-	let g:deoplete#sources#rust#racer_binary='/Users/blake/.cargo/bin/racer'
-	let g:deoplete#sources#rust#rust_source_path='/Users/blake/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src'
-	let g:deoplete#sources#ternjs#types = 1
 " }}}
 " {{{ neotex
 	let g:neotex_delay = 1
