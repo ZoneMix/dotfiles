@@ -2,7 +2,7 @@ export ZSH=~/dotfiles/zsh
 #export TERM=xterm-256color-italic
 #TERM=xterm
 export EDITOR=nvim
-export ZSH_THEME=intheloop
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -133,4 +133,11 @@ alias oldtom="ssh -i ~/.ssh/oldtom h752@cs.dsunix.net"
 alias tom="ssh -i ~/.ssh/newtom g803@cs.dsunix.net"
 alias andrew="ssh -i ~/.ssh/andrew bailey.belisario@dev.hostbin.org"
 alias gf="git add .; git commit; git push -u origin master"
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 

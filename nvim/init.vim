@@ -3,8 +3,6 @@ set nocompatible
 	call plug#begin('~/dotfiles/nvim/plugins')
 
 	Plug 'neomake/neomake'
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'Shougo/deoplete-clangx'
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	Plug 'edkolev/tmuxline.vim'
 	Plug 'vim-airline/vim-airline'
@@ -24,6 +22,7 @@ set nocompatible
 	Plug 'voldikss/vim-floaterm'
 	Plug 'thaerkh/vim-indentguides'
 	Plug 'jceb/vim-orgmode'
+	Plug 'zplugin/zplugin-vim-syntax'
 
 	call plug#end()
 " }}}
@@ -168,10 +167,10 @@ set nocompatible
 	let g:airline_theme = 'quantum'
 	let g:airline_section_z = '%{ChangeTmuxline()} %p%% %l:%c '
 
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
+    let g:airline_left_sep = "\uE0C8"
+    let g:airline_left_alt_sep = "\uE0B9"
+    let g:airline_right_sep = "\uE0BE"
+    let g:airline_right_alt_sep = '\uE0BE'
     let g:airline_symbols.branch = ''
     let g:airline_symbols.readonly = ''
     let g:airline_symbols.linenr = ''
