@@ -5,7 +5,7 @@ printf '\n\nUpdating and Upgrading...'
 sleep 1
 
 sudo apt update && sudo apt upgrade -y
-sudo apt install neovim curl python python3 tmux zsh git -y
+sudo apt install neovim curl python python3 tmux zsh -y
 
 printf '\n\nInstalling pip and pip3...\n'
 sleep 1
