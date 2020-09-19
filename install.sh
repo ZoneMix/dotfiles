@@ -4,7 +4,8 @@ cd ~/dotfiles
 printf '\n\nUpdating and Upgrading...'
 sleep 1
 
-sudo apt update && sudo apt upgrade -y > /dev/null
+sudo apt update > /dev/null
+sudo apt upgrade -y > /dev/null
 sudo apt install neovim curl python-all python-all-dev python3-all python3-all-dev tmux zsh -y > /dev/null
 
 printf '\n\nInstalling pip and pip3...\n'
@@ -35,18 +36,18 @@ echo 'source ~/dotfiles/nvim/init.vim' > ~/.config/nvim/init.vim
 
 printf '\n\nInstalling plugins for nvim...\n'
 sleep 1
-nvim +PlugInstall +PlugUpdate +qall <<< '\n'
+nvim +PlugInstall +PlugUpdate +qall
 
 echo 'source ~/dotfiles/zsh/zshrc.sh' > ~/.zshrc
 
 rmdir ~/dotfiles/zsh/plugins/zsh-syntax-highlighting
 rmdir ~/dotfiles/zsh/plugins/zsh-autosuggestions
 rmdir ~/dotfiles/zsh/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/dotfiles/zsh/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/dotfiles/zsh/plugins/zsh-autosuggestions
-git clone https://github.com/romkatv/powerlevel10k.git ~/dotfiles/zsh/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/dotfiles/zsh/plugins/zsh-syntax-highlighting > /dev/null
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/dotfiles/zsh/plugins/zsh-autosuggestions > /dev/null
+git clone https://github.com/romkatv/powerlevel10k.git ~/dotfiles/zsh/themes/powerlevel10k > /dev/null
 
 cd ~
 source .zshrc
 reset
-
+zsh
