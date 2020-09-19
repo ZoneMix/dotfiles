@@ -16,7 +16,6 @@ set nocompatible
 	Plug 'AndrewRadev/splitjoin.vim'
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'xolox/vim-misc'
-	Plug 'xolox/vim-notes'
 	Plug 'vimwiki/vimwiki'
 	Plug 'mrk21/yaml-vim'
 	Plug 'voldikss/vim-floaterm'
