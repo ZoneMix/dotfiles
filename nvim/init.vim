@@ -146,8 +146,6 @@ set nocompatible
 " }}}
 " {{{ deoplete
 	let g:deoplete#enable_at_startup = 1
-	" call deoplete#custom#var('clangx', 'default_c_options', '')
-	" call deoplete#custom#var('clangx', 'default_cpp_options', '')
 " }}}
 " {{{ neotex
 	let g:neotex_delay = 1
@@ -175,10 +173,6 @@ set nocompatible
     let g:airline_symbols.readonly = ''
     let g:airline_symbols.linenr = ''
 " }}}
-" {{{ vim-notes
-	let g:notes_directories = ['~/class/Notes']
-	let g:notes_suffix = '.txt'
-" }}}
 " {{{ tmuxline
 	let g:tmuxline_powerline_separators = 1
 	let g:tmuxline_theme = 'airline'
@@ -188,8 +182,6 @@ set nocompatible
 		\'c': '',
 		\'win': '#I #W',
 		\'cwin': '#I #W',
-		\'x': '#(sh ~/dotfiles/scripts/cpu_percentage.sh)',
-		\'y': '#(sh ~/dotfiles/scripts/batt.sh)',
 		\'z': '#(date +"%l:%M%p")'}
 " }}}
 " {{{ floaterm 
