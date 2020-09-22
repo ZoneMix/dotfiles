@@ -54,6 +54,9 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
+~/.local/bin/pip install pynvim
+~/.local/bin/pip3 install pynvim
+
 cd ~
 source .zshrc
 reset
