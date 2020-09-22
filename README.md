@@ -1,7 +1,7 @@
 # pdotfiles
 These are my custom dotfiles that I use on the daily
 
-Note: I personally use iTerm as my terminal so it looks beautiful in that, if using other terminals, powerlevel10k may not be able to render the fonts correctly depending what you are using. Make sure that Powerline fonts are installed on the system too.
+Note: You will need to set your terminal font inside of preferences to the Meslo LGS NF Regular font to make it look nice. Once you do that if not already installed, run "p10k configure" in the terminal and you should have all the fancy symbols!
 
 ![Image](Terminal.png)
 
