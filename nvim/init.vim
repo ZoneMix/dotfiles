@@ -2,7 +2,6 @@ set nocompatible
 " {{{ Plugins
 	call plug#begin('~/dotfiles/nvim/plugins')
 
-	Plug 'neomake/neomake'
 	Plug 'donRaphaco/neotex', { 'for': 'tex' }
 	Plug 'edkolev/tmuxline.vim'
 	Plug 'vim-airline/vim-airline'
@@ -21,7 +20,6 @@ set nocompatible
 	Plug 'voldikss/vim-floaterm'
 	Plug 'thaerkh/vim-indentguides'
 	Plug 'jceb/vim-orgmode'
-	Plug 'zplugin/zplugin-vim-syntax'
 
 	call plug#end()
 " }}}
@@ -131,17 +129,6 @@ set nocompatible
 		endif
 		return ""
 	endfunction
-" }}}
-" {{{ neomake
-	call neomake#configure#automake('nrwi', 1)
-	let g:neomake_warning_sign = {
-	  \ 'text': '--',
-	  \ 'texthl': 'WarningMsg',
-	  \ }
-	let g:neomake_error_sign = {
-	  \ 'text': '>>',
-	  \ 'texthl': 'ErrorMsg',
-	  \ }
 " }}}
 " {{{ deoplete
 	let g:deoplete#enable_at_startup = 1

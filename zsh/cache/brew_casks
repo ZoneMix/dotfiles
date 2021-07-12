@@ -1,0 +1,4 @@
+list=( ${(Q)"${(z)$(<<\EO:list
+'cmacrae/formulae/spacebar' 'cpp-ethereum' 'ethereum' 'ethereum/ethereum/cpp-ethereum' 'ethereum/ethereum/ethereum' 'ethereum/ethereum/solidity' 'ethereum/ethereum/solidity@4' 'ethereum/ethereum/solidity@5' 'ethereum/ethereum/solidity@6' 'ethereum/ethereum/solidity@7' 'koekeishiya/formulae/krp' 'koekeishiya/formulae/skhd' 'koekeishiya/formulae/yabai' 'krp' 'skhd' 'solidity' 'solidity@4' 'solidity@5' 'solidity@6' 'solidity@7' 'spacebar' 'yabai'
+EO:list
+)}"} )

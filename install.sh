@@ -4,9 +4,9 @@ cd ~/dotfiles
 printf '\n\nUpdating and Upgrading...'
 sleep 1
 
-sudo apt update > /dev/null
-sudo apt upgrade -y > /dev/null
-sudo apt install neovim curl python-all python-all-dev python3-all python3-all-dev tmux zsh -y > /dev/null
+#sudo apt update > /dev/null
+#sudo apt upgrade -y > /dev/null
+#sudo apt install neovim curl python-all python-all-dev python3-all python3-all-dev tmux zsh -y > /dev/null
 
 printf '\n\nInstalling pip and pip3...\n'
 sleep 1
