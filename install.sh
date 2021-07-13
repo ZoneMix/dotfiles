@@ -5,15 +5,7 @@ printf '\n\nUpdating and Upgrading...'
 sleep 1
 
 sudo apt update && apt upgrade -y
-sudo apt install neovim curl python python3 tmux zsh git -y
-
-printf '\n\nInstalling pip and pip3...\n'
-sleep 1
-
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-chmod u+x get-pip.py
-python get-pip.py
-python3 get-pip.py
+sudo apt install neovim curl python3-all python3-pip tmux zsh git -y
 
 printf '\n\nInstalling pynvim...\n'
 sleep 1
@@ -39,6 +31,7 @@ echo 'source ~/dotfiles/nvim/init.vim' > ~/.config/nvim/init.vim
 printf '\n\nInstalling plugins for nvim...\n'
 sleep 1
 nvim +PlugInstall +PlugUpdate +qall
+sudo fc-cache -v
 
 echo 'source ~/dotfiles/zsh/zshrc.sh' > ~/.zshrc
 
