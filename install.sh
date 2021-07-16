@@ -4,31 +4,24 @@ cd ~/dotfiles
 printf '\n\nUpdating and Upgrading...'
 sleep 1
 
-#sudo apt update > /dev/null
-#sudo apt upgrade -y > /dev/null
-#sudo apt install neovim curl python-all python-all-dev python3-all python3-all-dev tmux zsh -y > /dev/null
-
-printf '\n\nInstalling pip and pip3...\n'
-sleep 1
-
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py > /dev/null
-chmod u+x get-pip.py
-python get-pip.py > /dev/null
-python3 get-pip.py > /dev/null
+sudo apt update && apt upgrade -y
+sudo apt install neovim curl python3-all python3-pip tmux zsh gcc terminator libc6-i386 libc6-mipsel-cross libc6-armel-cross gdb gdb-multiarch qemu-user qemu-system qemu-user-static gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gcc-arm-none-eabi binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf build-essential bochs git vim -y
 
 printf '\n\nInstalling pynvim...\n'
 sleep 1
-pip install pynvim > /dev/null
-pip3 install pynvim > /dev/null
+pip3 install pynvim
 
 printf '\n\nChanging default shell to ZSH shell...\n'
-sleep 1
 chsh -s $(which zsh)
 
 printf '\n\nInstalling Plug for nvim...\n'
 sleep 1
 
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+printf '\n\nInstalling Oh-My-Zsh...\n'
+
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 mkdir -p ~/.config/nvim
 
@@ -54,8 +47,7 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20B
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
-~/.local/bin/pip install pynvim
-~/.local/bin/pip3 install pynvim
+sudo fc-cache -v
 
 cd ~
 source .zshrc
