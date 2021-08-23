@@ -1,19 +1,9 @@
 #!/bin/bash
 cd ~/dotfiles
 
-printf '\n\nUpdating and Upgrading...'
-sleep 1
-
-sudo apt update && apt upgrade -y
-sudo apt install neovim curl python3-all python3-pip tmux zsh gcc terminator libc6-i386 libc6-mipsel-cross libc6-armel-cross gdb gdb-multiarch qemu-user qemu-system qemu-user-static gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gcc-arm-none-eabi binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf build-essential bochs git vim -y
-
 printf '\n\nInstalling pip packages\n'
 sleep 1
-pip3 install pynvim ropper keystone-engine pwntools
-
-printf '\n\nInstalling gef'
-sleep 1
-wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
+pip3 install pynvim
 
 printf '\n\nChanging default shell to ZSH shell...\n'
 sleep 1
@@ -51,8 +41,6 @@ wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20R
 wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
 https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-
-sudo fc-cache -v
 
 cd ~
 source .zshrc

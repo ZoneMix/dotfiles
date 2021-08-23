@@ -20,6 +20,10 @@ set nocompatible
 	Plug 'voldikss/vim-floaterm'
 	Plug 'thaerkh/vim-indentguides'
 	Plug 'jceb/vim-orgmode'
+	Plug 'MarcWeber/vim-addon-mw-utils'
+	Plug 'tomtom/tlib_vim'
+	Plug 'garbas/vim-snipmate'
+	Plug 'honza/vim-snippets'
 
 	call plug#end()
 " }}}
@@ -190,4 +194,7 @@ set nocompatible
 " {{{ highlights
 	hi Visual ctermfg=255 guifg=#FFFFFF ctermbg=129 guibg=#AF00FF
 	highlight Comment cterm=italic
+" }}}
+" {{{ snippets
+	let g:snipMate = { 'snippet_version' : 1 }
 " }}}

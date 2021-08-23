@@ -3,7 +3,8 @@ export ZSH=~/dotfiles/zsh
 #TERM=xterm
 export EDITOR=nvim
 export ZSH_THEME="powerlevel10k/powerlevel10k"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/Users/baileybelisario/Library/Python/3.9/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/Users/zonemix/Library/Python/3.9/bin:/usr/local/share/dotnet:/usr/local/opt/openjdk@11/bin"
+export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -36,4 +37,6 @@ fi
 alias yabairc="vi ~/.config/yabai/yabairc"
 alias skhdrc="vi ~/.config/skhd/skhdrc"
 alias onedrive="cd \"~/onedrive/OneDrive - Dakota State University\""
-alias cloud="cd \"/Users/baileybelisario/Library/Mobile Documents/com~apple~CloudDocs\""
+alias cloud="cd \"/Users/zonemix/Library/Mobile Documents/com~apple~CloudDocs\""
+alias sl="ls"
+alias zubu="ssh root@192.168.245.5"

@@ -1,0 +1,114 @@
+# Recent settings file for Wireshark 3.0.3.
+#
+# This file is regenerated each time Wireshark is quit.
+# So be careful, if you want to make manual changes here.
+
+######## Recent capture files (latest last), cannot be altered through command line ########
+
+recent.capture_file: /Users/baileybelisario/Downloads/midi.pcap
+recent.capture_file: /Users/baileybelisario/Downloads/powermeter.pcap
+recent.capture_file: /Users/baileybelisario/Downloads/creds.pcap
+recent.capture_file: /Users/baileybelisario/Desktop/evidence00.pcap
+recent.capture_file: /Users/baileybelisario/Desktop/Anomalies/Anomalies 21-30/Anomaly 21.pcap
+recent.capture_file: /Users/baileybelisario/Desktop/Anomalies/Anomalies 21-30/Anomaly 25.pcap
+recent.capture_file: /Users/baileybelisario/Desktop/Anomalies/Anomalies 41-50/challB/sneak_exfil_clean.pcapng
+recent.capture_file: /Users/baileybelisario/Desktop/Anomalies/Anomalies 32, 34, 36-40/Anomaly 40.pcapng
+recent.capture_file: /Users/baileybelisario/OneDrive - Dakota State University/dsuclasses/CellMobileComm/Scrubbed_GSM.pcapng
+
+######## Recent capture filters (latest last), cannot be altered through command line ########
+
+
+######## Recent display filters (latest last), cannot be altered through command line ########
+
+recent.display_filter: gsmtap.chan_type == 10
+recent.display_filter: gsmtap.chan_type == 9
+recent.display_filter: gsmtap.chan_type == 7
+recent.display_filter: gsmtap.chan_type == 6
+recent.display_filter: gsmtap.chan_type == 5
+recent.display_filter: gsmtap.chan_type == 4
+recent.display_filter: gsmtap.chan_type == 3
+recent.display_filter: gsmtap.chan_type == 2
+recent.display_filter: gsmtap.chan_type == 1
+recent.display_filter: gsmtap.chan_type == 8
+
+# Main window geometry.
+# Decimal numbers.
+gui.geometry_main_x: 0
+gui.geometry_main_y: 23
+gui.geometry_main_width: 1792
+gui.geometry_main_height: 998
+
+# Main window maximized.
+# TRUE or FALSE (case-insensitive).
+gui.geometry_main_maximized: TRUE
+
+# Statusbar left pane size.
+# Decimal number.
+gui.geometry_status_pane: 250
+
+# Statusbar middle pane size.
+# Decimal number.
+gui.geometry_status_pane_right: 250
+
+# Last used Configuration Profile.
+gui.last_used_profile: Default
+
+# WLAN statistics upper pane size.
+# Decimal number.
+gui.geometry_status_wlan_stats_pane: 200
+
+# Warn if running with elevated permissions (e.g. as root).
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_elevated: TRUE
+
+# Warn if npf.sys isn't loaded on Windows >= 6.0.
+# TRUE or FALSE (case-insensitive).
+privs.warn_if_no_npf: TRUE
+
+# Geometry and maximized state of ResolvedAddressesDialog window.
+# Decimal integers.
+gui.geom.ResolvedAddressesDialog.x: 270
+gui.geom.ResolvedAddressesDialog.y: 23
+gui.geom.ResolvedAddressesDialog.width: 1120
+gui.geom.ResolvedAddressesDialog.height: 1005
+# TRUE or FALSE (case-insensitive).
+gui.geom.ResolvedAddressesDialog.maximized: FALSE
+
+# Geometry and maximized state of PreferencesDialog window.
+# Decimal integers.
+gui.geom.PreferencesDialog.x: 530
+gui.geom.PreferencesDialog.y: 277
+gui.geom.PreferencesDialog.width: 680
+gui.geom.PreferencesDialog.height: 475
+# TRUE or FALSE (case-insensitive).
+gui.geom.PreferencesDialog.maximized: FALSE
+
+# Geometry and maximized state of FollowStreamDialog window.
+# Decimal integers.
+gui.geom.FollowStreamDialog.x: 840
+gui.geom.FollowStreamDialog.y: 23
+gui.geom.FollowStreamDialog.width: 840
+gui.geom.FollowStreamDialog.height: 1005
+# TRUE or FALSE (case-insensitive).
+gui.geom.FollowStreamDialog.maximized: FALSE
+
+# Geometry and maximized state of TLS Decrypt window.
+# Decimal integers.
+gui.geom.TLS Decrypt.x: 577
+gui.geom.TLS Decrypt.y: 295
+gui.geom.TLS Decrypt.width: 566
+gui.geom.TLS Decrypt.height: 403
+# TRUE or FALSE (case-insensitive).
+gui.geom.TLS Decrypt.maximized: FALSE
+
+# Custom colors.
+# List of custom colors selected in Qt color picker.
+gui.custom_colors: 
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff",
+	"ffffffff", "ffffffff"
