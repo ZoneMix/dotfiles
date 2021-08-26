@@ -1,5 +1,5 @@
 # pdotfiles
-These are my custom dotfiles that I use on the daily
+These are my custom dotfiles that I use in my daily set up.
 
 Note: You will need to set your terminal font inside of preferences to the Meslo LGS NF Regular font to make it look nice. Once you do that if not already installed, run "p10k configure" in the terminal and you should have all the fancy symbols!
 
