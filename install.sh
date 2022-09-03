@@ -2,8 +2,8 @@
 printf '\n\nUpdating and Upgrading...'
 sleep 1
 
-sudo apt update && sudo apt upgrade -y
-sudo apt install neovim curl python3-all python3-pip tmux zsh gcc terminator libc6-i386 libc6-mipsel-cross libc6-armel-cross gdb gdb-multiarch qemu-user qemu-system qemu-user-static gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gcc-arm-none-eabi binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf build-essential bochs git vim -y
+sudo apt update && sudo apt update --fix-missing && sudo apt upgrade -y
+sudo apt install neovim curl python3-all python3-pip tmux zsh gcc terminator gdb gdb-multiarch qemu-user qemu-system qemu-user-static gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gcc-arm-none-eabi binutils-aarch64-linux-gnu binutils-arm-linux-gnueabihf build-essential bochs git vim -y
 
 printf '\n\nInstalling dotfiles\n'
 sleep 1
@@ -29,7 +29,7 @@ curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs https://r
 
 printf '\n\nInstalling Oh-My-Zsh...\n'
 
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 
 mkdir -p $HOME/.config/nvim
 
