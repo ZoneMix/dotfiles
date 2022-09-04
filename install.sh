@@ -13,11 +13,11 @@ cd $HOME/dotfiles
 printf '\n\nInstalling pip packages\n'
 sleep 1
 pip3 install gensim
-pip3 install pynvim ropper keystone-engine pwntools
+pip3 install pynvim pwntools
 
 printf '\n\nInstalling gef'
 sleep 1
-wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
+bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
 printf '\n\nChanging default shell to ZSH shell...\n'
 sleep 1
